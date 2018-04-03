@@ -1,4 +1,4 @@
-function acSearch() {
+function autoCompliteSearch() {
     let input = /** @type {!HTMLInputElement} */(
         document.getElementById('address'));
 

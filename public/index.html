@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Lunch Time</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
     <script src="../google_map_api/addMarker_map_module.js"></script>
     <script src="../google_map_api/geolocation_map_module.js"></script>
     <script src="../google_map_api/geocode_map_module.js"></script>
     <script src="../google_map_api/autocomplite_map_module.js"></script>
 </head>
 <body>
-<form method="post">
-    <label for="address"></label>
-    <input type="text" id="address">
-    <input type="button" id="submit" value="Geolocate">
-</form>
-<div id="googleMap" style="width:100%; height:560px"></div>
-<script src="../google_map_api/connect_map_module.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0cdU9wpBC5QHLuSfRGiA__JNR_EuWFZY&callback=initMap&language=ru&libraries=places"></script>
+<div id="mainBoard">
+    <div class="titleApp">
+        <p>Askartec</p>
+        <h2>Корпоративый ланч</h2>
+    </div>
+    <form action="/create" method="post" class="addressForm">
+        <input type="text" id="address" class="addressInput">
+        <input type="button" id="submit" class="addressSubmit" value="Найти">
+        <input type="button" id="create" class="addressCreate" value="Добавить в список">
+    </form>
+    <!--<div id="infoBoard">
+        <form action="/read" method="post" class="infoForm">
+            <input type="button" id="addressUpdate" class="addressUpdate">
+            <input type="button" id="randomGenerate" class="randomGenerate" value="Выбрать место">
+        </form>
+    </div>-->
+    <div id="googleMap"></div>
+    <script src="../google_map_api/connect_map_module.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0cdU9wpBC5QHLuSfRGiA__JNR_EuWFZY&callback=initMap&language=ru&libraries=places"></script>
+</div>
 </body>
 </html>

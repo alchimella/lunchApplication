@@ -9,7 +9,7 @@ function initMap () {
 
     map.addListener('click', function (event) {
        addMarker(event.latLng);
-       document.getElementById('address').value = event.latLng;
+       //document.getElementById('address').value = event.latLng;
     });
 
     let geocoder = new google.maps.Geocoder();
@@ -17,9 +17,9 @@ function initMap () {
     document.getElementById('submit').addEventListener('click', function () {
         geocodeAddress(geocoder, map);
     });
-
+    autoCompliteSearch();
     addMarker(map);
     findGeolocation();
     geocodeAddress();
-    acSearch();
+
 }

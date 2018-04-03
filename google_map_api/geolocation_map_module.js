@@ -1,7 +1,7 @@
 function findGeolocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-            let contentString = '<h2 style=\'color: maroon;\'>Askartech</h2>';
+            let contentString = '<h2 style=\'color: maroon;\'>Askartec</h2>';
             let pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude

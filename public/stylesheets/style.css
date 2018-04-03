@@ -1,8 +1,112 @@
 body {
   padding: 50px;
+  background-color: #3d455c;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#googleMap {
+  width: 580px;
+  height: 620px;
+  position: absolute;
+  left: 1.5%;
+  top: 30%;
+}
+
+#mainBoard {
+  width: 600px;
+  height: 900px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 30%;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#infoBoard {
+  width: 320px;
+  height: 460px;
+  background-color: #ffffff;
+  position: absolute;
+  left: 100%;
+  bottom: 45%;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.titleApp {
+  padding-left: 20px;
+}
+
+.titleApp p {
+  color: maroon;
+  font-weight: 600;
+  font-size: 30px;
+  font-family: 'Roboto', serif;
+  text-align: center;
+}
+
+.titleApp h2 {
+  font-family: 'Verdana', sans-serif;
+}
+
+.addressForm {
+  padding-left: 20px;
+}
+
+.addressInput {
+  width: 400px;
+  height: 25px;
+  border: 2px solid #3366cc;
+  border-radius: 2px;
+  font-family: 'Verdana', sans-serif;
+  font-size: 16px;
+}
+
+.addressSubmit {
+  width: 140px;
+  height: 32px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background: linear-gradient(to right, #6699ff, #3366cc);
+}
+
+.addressCreate {
+  width: 200px;
+  height: 32px;
+  margin-top: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background-color: #b5d161;
+}
+
+.infoForm #addressUpdate {
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background-color: #3366cc;
+}
+
+.infoForm #randomGenerate {
+  width: 200px;
+  height: 32px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background-color: #b5d161;
 }
