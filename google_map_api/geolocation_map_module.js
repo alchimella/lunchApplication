@@ -1,6 +1,6 @@
-function findGeolocation() {
+findGeolocation = () => {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
+        navigator.geolocation.getCurrentPosition((position) => {
             let contentString = '<h2 style=\'color: maroon;\'>Askartec</h2>';
             let pos = {
                 lat: position.coords.latitude,
@@ -16,20 +16,20 @@ function findGeolocation() {
                 map: map
             });
 
-            homeMarker.addListener('click', function() {
+            homeMarker.addListener('click', () => {
                 infowindow.open(map, homeMarker);
             });
             map.setCenter(pos);
 
-        }, function() {
+        }, () => {
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         handleLocationError(false, infoWindow, mapCenter());
     }
-}
+};
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+handleLocationError = (browserHasGeolocation, infoWindow, pos) => {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
-}
+};

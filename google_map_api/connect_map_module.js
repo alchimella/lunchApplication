@@ -1,25 +1,31 @@
 let map;
 let marker;
-function initMap () {
+initMap = () => {
     let latitudeLongitude = { lat: 42.87909718755642, lng: 74.5953816175461 };
     map = new google.maps.Map(document.getElementById('googleMap'), {
         zoom: 16,
         center: latitudeLongitude
     });
 
-    map.addListener('click', function (event) {
-       addMarker(event.latLng);
-       //document.getElementById('address').value = event.latLng;
+    let geocoder = new google.maps.Geocoder();
+    let infoWindow = new google.maps.InfoWindow;
+
+    map.addListener('click', (event) => {
+        let lat = event.latLng.lat();
+        let lng = event.latLng.lng();
+        addMarker(event.latLng);
+        //let resultAddress = geocodeLatLng();
+        document.getElementById('coordinates').value = lat + ', ' + lng;
+        //document.getElementById('result').value = resultAddress;
+        geocodeLatLng(geocoder, map, infoWindow);
     });
 
-    let geocoder = new google.maps.Geocoder();
-
-    document.getElementById('submit').addEventListener('click', function () {
+    document.getElementById('submit').addEventListener('click', () => {
         geocodeAddress(geocoder, map);
     });
     autoCompliteSearch();
     addMarker(map);
     findGeolocation();
     geocodeAddress();
-
-}
+    geocodeLatLng();
+};

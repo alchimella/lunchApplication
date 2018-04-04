@@ -1,4 +1,4 @@
-function addMarker(location) {
+addMarker = (location) => {
     if (marker == null) {
         marker = new google.maps.Marker({
             position: location,
@@ -8,4 +8,4 @@ function addMarker(location) {
     } else {
         marker.setPosition(location);
     }
-}
+};
