@@ -1,6 +1,7 @@
 let assert = require('assert');
 let express = require('express');
 let MongoClient = require('mongodb').MongoClient;
+let ObjectId = require('mongodb').ObjectID;
 let router = express.Router();
 
 let url = 'mongodb://localhost:27017/lunchAppDB';
@@ -10,7 +11,7 @@ router.get('/', (req, res, next) => {
     res.render('index');
 });
 
-router.get('../get-data', (err, res, next) => {
+router.get('/get-data', (err, res, next) => {
     let resultArray = [];
     MongoClient.connect(url, (err, db) => {
         assert.equal(null, err);
@@ -25,7 +26,7 @@ router.get('../get-data', (err, res, next) => {
     });
 });
 
-router.post('../insert', (req, res, next) => {
+router.post('/index', (req, res, next) => {
     let item = {
         address: req.body.address
     };

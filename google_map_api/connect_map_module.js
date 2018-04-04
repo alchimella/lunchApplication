@@ -23,6 +23,7 @@ initMap = () => {
     document.getElementById('submit').addEventListener('click', () => {
         geocodeAddress(geocoder, map);
     });
+
     autoCompliteSearch();
     addMarker(map);
     findGeolocation();
