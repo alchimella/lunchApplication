@@ -3,18 +3,19 @@
         <p>Askartec</p>
         <h2>Корпоративый ланч</h2>
     </div>
-    <form action="/insert" name="infoForm" method="POST" class="addressForm">
-        <input type="text" id="address" class="addressInput">
+    <form action="/insert" method="post" name="infoForm"  class="addressForm">
+        <input type="text" id="address" name="address" class="addressInput">
         <input type="text" id="coordinates" class="addressInput">
         <input type="button" id="submit" class="addressSubmit" value="Найти">
         <button type="submit" class="addressCreate">Добавить в список</button>
     </form>
     <div id="infoBoard">
-        <form method="post" class="infoForm">
+        <form action="/get-data" method="post" class="infoForm">
+            <button type="submit" class="addressCreate">Загрузить список мест</button>
             <input type="button" id="randomGenerate" class="randomGenerate" value="Выбрать место">
         </form>
     </div>
     <div id="googleMap"></div>
-    <script src="/connect_map_module.js"></script>
+    <script src="/google_map_api/connect_map_module.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0cdU9wpBC5QHLuSfRGiA__JNR_EuWFZY&callback=initMap&language=ru&libraries=places"></script>
 </div>
