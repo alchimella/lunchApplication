@@ -3,7 +3,7 @@ let marker;
 initMap = () => {
     let latitudeLongitude = { lat: 42.87909718755642, lng: 74.5953816175461 };
     map = new google.maps.Map(document.getElementById('googleMap'), {
-        zoom: 16,
+        zoom: 18,
         center: latitudeLongitude
     });
 

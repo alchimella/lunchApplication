@@ -5,7 +5,7 @@ geocodeLatLng = (geocoder, map, infoWindow) => {
     geocoder.geocode({'location': latlng}, (results, status) => {
         if (status === 'OK') {
             if (results[1]) {
-                map.setZoom(16);
+                map.setZoom(18);
                 infoWindow.setContent(results[1].formatted_address);
                 infoWindow.open(map, marker);
             } else {

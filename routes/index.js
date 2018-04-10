@@ -2,6 +2,7 @@ let assert = require('assert');
 let express = require('express');
 let MongoClient = require('mongodb').MongoClient;
 let ObjectId = require('mongodb').ObjectID;
+let bodyParser = require('body-parser');
 let router = express.Router();
 
 let url = 'mongodb://localhost:27017/lunchAppDB';
@@ -11,29 +12,14 @@ router.get('/', (req, res, next) => {
     res.render('index');
 });
 
-router.get('/get-data', (err, res, next) => {
-    let resultArray = [];
-    MongoClient.connect(url, (err, db) => {
-        assert.equal(null, err);
-        let cursor = db.collection('lunchAppDB').find();
-        cursor.forEach((doc, err) => {
-           assert.equal(null, err);
-           resultArray.push(doc);
-        }, () => {
-            db.close();
-            res.render('index', { items: resultArray });
-        });
-    });
-});
-
-router.post('/index', (req, res, next) => {
+router.post('/insert', (req, res, next) => {
     let item = {
         address: req.body.address
     };
 
     MongoClient.connect(url, (err, db) => {
         assert.equal(null, err);
-        db.collection('lunchAppDB').insertOne(item, (err, res) => {
+        db.collection('places').insertOne(item, (err, result) => {
             assert.equal(null, err);
             console.log('Item inserted');
             db.close();
@@ -41,4 +27,5 @@ router.post('/index', (req, res, next) => {
     });
     res.redirect('/');
 });
+
 module.exports = router;
