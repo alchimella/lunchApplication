@@ -4,72 +4,49 @@ body {
 }
 
 #googleMap {
-  width: 580px;
-  height: 620px;
-  position: absolute;
-  left: 1.5%;
-  top: 30%;
+  width: 95%;
+  height: 640px;
 }
 
 #mainBoard {
-  width: 600px;
-  height: 900px;
-  background-color: #ffffff;
-  position: absolute;
-  left: 30%;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  height: 640px;
 }
 
 #infoBoard {
-  width: 320px;
-  height: 460px;
+  width: 50%;
+  height: 640px;
+  float: right;
   background-color: #ffffff;
-  position: absolute;
-  left: 100%;
-  bottom: 45%;
   border-radius: 6px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.titleApp {
-  padding-left: 20px;
-}
-
-.titleApp p {
-  color: maroon;
-  font-weight: 600;
-  font-size: 30px;
-  font-family: 'Roboto', serif;
-  text-align: center;
-}
-
-.titleApp h2 {
-  font-family: 'Verdana', sans-serif;
-}
-
-.addressForm {
-  padding-left: 20px;
+#mapBoard {
+  width: 50%;
+  height: 640px;
+  float: left;
+  background-color: #ffffff;
+  border-radius: 6px;
 }
 
 .addressInput {
-  width: 400px;
+  width: 72%;
   height: 25px;
-  border: 2px solid #3366cc;
-  border-radius: 2px;
+  border: 2px solid #baccde;
+  border-radius: 4px;
   font-family: 'Verdana', sans-serif;
   font-size: 16px;
 }
 
 .addressSubmit {
-  width: 140px;
+  width: 200px;
   height: 32px;
   color: #ffffff;
   border: none;
   border-radius: 3px;
   font-size: 16px;
   font-family: 'Verdana', sans-serif;
-  background: linear-gradient(to right, #6699ff, #3366cc);
+  background: #99caff;
 }
 
 .addressCreate {
@@ -108,4 +85,10 @@ body {
   font-size: 16px;
   font-family: 'Verdana', sans-serif;
   background-color: #b5d161;
+}
+
+.titleApp p{
+  color: #ff4d4d;
+  font-size: 26px;
+  text-align: center;
 }

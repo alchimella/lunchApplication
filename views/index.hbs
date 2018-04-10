@@ -1,21 +1,24 @@
 <div id="mainBoard">
     <div class="titleApp">
         <p>Askartec</p>
-        <h2>Корпоративый ланч</h2>
+        <h3>Корпоративый ланч</h3>
     </div>
-    <form action="/insert" method="post" name="infoForm"  class="addressForm">
-        <input type="text" id="address" name="address" class="addressInput">
-        <input type="text" id="coordinates" class="addressInput">
-        <input type="button" id="submit" class="addressSubmit" value="Найти">
-        <button type="submit" class="addressCreate">Добавить в список</button>
-    </form>
+    <div id="mapBoard">
+        <form action="/insert" method="post" name="infoForm"  class="addressForm">
+            <input type="text" id="address" name="address" class="addressInput">
+            <input type="button" id="submit" class="addressSubmit" value="Найти"><br>
+            <input type="text" id="coordinates" class="addressInput">
+            <button type="submit" class="addressCreate">Добавить в список</button>
+        </form>
+        <div id="googleMap"></div>
+    </div>
     <div id="infoBoard">
         <form action="/get-data" method="post" class="infoForm">
             <button type="submit" class="addressCreate">Загрузить список мест</button>
             <input type="button" id="randomGenerate" class="randomGenerate" value="Выбрать место">
         </form>
     </div>
-    <div id="googleMap"></div>
+
     <script src="/google_map_api/connect_map_module.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0cdU9wpBC5QHLuSfRGiA__JNR_EuWFZY&callback=initMap&language=ru&libraries=places"></script>
 </div>
