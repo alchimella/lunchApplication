@@ -13,9 +13,25 @@
         <div id="googleMap"></div>
     </div>
     <div id="infoBoard">
-        <form action="/get-data" method="post" class="infoForm">
-            <button type="submit" class="addressCreate">Загрузить список мест</button>
-            <input type="button" id="randomGenerate" class="randomGenerate" value="Выбрать место">
+        <form action="/get-data">
+            <button type="submit" class="addressLoad">Загрузить список мест</button>
+            <div class="bodyInfo">
+                {{# each items}}
+                    <article class="item">
+                        <div><p>{{this.address}}</p></div>
+                        <div>
+                            <form action="/delete" method="post">
+                                <button type="submit" id="id" class="addressDelete"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    </article>
+                {{/each}}
+            </div>
+        </form>
+        <div class="stripe"></div>
+        <form action="/result" method="post">
+            <button type="submit" class="addressChoose">Выбрать место</button>
+            {{address}}
         </form>
     </div>
 

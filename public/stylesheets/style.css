@@ -5,7 +5,8 @@ body {
 
 #googleMap {
   width: 95%;
-  height: 640px;
+  height: 580px;
+  margin-top: 5px;
 }
 
 #mainBoard {
@@ -46,7 +47,7 @@ body {
   border-radius: 3px;
   font-size: 16px;
   font-family: 'Verdana', sans-serif;
-  background: #99caff;
+  background: #4dc3ff;
 }
 
 .addressCreate {
@@ -54,6 +55,41 @@ body {
   height: 32px;
   margin-top: 10px;
   color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background-color: #b5d161;
+}
+
+.addressLoad {
+  width: 200px;
+  height: 32px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background-color: #b5d161;
+}
+
+.addressDelete {
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: -5.7%;
+  margin-right: 0.7%;
+  color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  background-color: #ff4d4d;
+}
+
+.addressChoose {
+  width: 200px;
+  height: 32px;
+  color: #ffffff;
+  margin-top: 20px;
   border: none;
   border-radius: 3px;
   font-size: 16px;
@@ -91,4 +127,30 @@ body {
   color: #ff4d4d;
   font-size: 26px;
   text-align: center;
+}
+
+.bodyInfo {
+  margin-top: 10px;
+  height: 315px;
+  overflow-y: scroll;
+}
+
+.item {
+  width: 70%;
+  height: 30px;
+  border: 2px solid #cceeff;
+  border-radius: 3px;
+  margin-top: 5px;
+  font-family: 'Verdana', sans-serif;
+  font-size: 16px;
+}
+
+.item p {
+  margin-top: 1%;
+  margin-left: 5px;
+}
+
+.stripe {
+  border: 1px solid #baccde;
+  margin-top: 20px;
 }

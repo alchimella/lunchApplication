@@ -13,21 +13,22 @@ router.get('/', (req, res, next) => {
 
 router.get('/get-data', (req, res, next) => {
     let resultArray = [];
+
     MongoClient.connect(url, (err, db) => {
         assert.equal(null, err);
-        let cursor = db.collection('places').findOne();
+        let dbo = db.db("lunchAppDB");
+        let cursor = dbo.collection("places").find({});
         cursor.forEach((doc, err) => {
             assert.equal(null, err);
             resultArray.push(doc);
         }, () => {
-            db.close();
             res.render('index', { items: resultArray });
+            db.close();
         });
     });
 });
 
 router.post('/insert', (req, res, next) => {
-
     MongoClient.connect(url, (err, db) => {
         assert.equal(null, err);
         let item = {
@@ -45,21 +46,6 @@ router.post('/insert', (req, res, next) => {
     res.redirect('/');
 });
 
-router.post('/update', (req, res, next) => {
-    let item = {
-        address: req.body.address
-    };
-    let id = req.body.id;
-
-    MongoClient.connect(url, (err, db) => {
-        assert.equal(null, err);
-        db.collection('places').updateOne({ "_id": ObjectId(id) }, { $set: item }, (err, result) => {
-            assert.equal(null, err);
-            console.log('Item updated');
-            db.close();
-        });
-    });
-});
 
 router.post('/delete', (req, res, next) => {
     let id = req.body.id;
@@ -69,6 +55,27 @@ router.post('/delete', (req, res, next) => {
         db.collection('places').deleteOne({ "_id": ObjectId(id) }, (err, result) => {
             assert.equal(null, err);
             console.log('Item deleted');
+            db.close();
+        });
+    });
+});
+
+router.post('/result', (req, res, next) => {
+    let resultArray = [];
+    let random;
+
+    MongoClient.connect(url, (err, db) => {
+        assert.equal(null, err);
+        let dbo = db.db("lunchAppDB");
+        let cursor = dbo.collection("places").find({});
+        cursor.forEach((doc, err) => {
+            assert.equal(null, err);
+            resultArray.push(doc);
+        }, () => {
+            random = Math.floor(Math.random() * resultArray.length);
+            console.log(random);
+            console.log(random.address);
+            res.render('index', { items: random });
             db.close();
         });
     });

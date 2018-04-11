@@ -14,9 +14,7 @@ initMap = () => {
         let lat = event.latLng.lat();
         let lng = event.latLng.lng();
         addMarker(event.latLng);
-        //let resultAddress = geocodeLatLng();
         document.getElementById('coordinates').value = lat + ', ' + lng;
-        //document.getElementById('result').value = resultAddress;
         geocodeLatLng(geocoder, map, infoWindow);
     });
 

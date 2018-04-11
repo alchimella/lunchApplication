@@ -6,6 +6,7 @@ geocodeLatLng = (geocoder, map, infoWindow) => {
         if (status === 'OK') {
             if (results[1]) {
                 map.setZoom(18);
+                document.getElementById('address').value = results[1].formatted_address;
                 infoWindow.setContent(results[1].formatted_address);
                 infoWindow.open(map, marker);
             } else {
